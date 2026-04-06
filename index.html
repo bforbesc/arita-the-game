@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arita's Puppy Panic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Tiny dog. Serious mission.</p>
+          <h1>Arita's Puppy Panic</h1>
+          <p class="subtitle">
+            Catch the good stuff. Dodge the nonsense. Keep the little gremlin
+            happy for as long as possible.
+          </p>
+        </div>
+
+        <div class="stats-card">
+          <div>
+            <span class="label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span class="label">Target</span>
+            <strong id="target">20</strong>
+          </div>
+          <div>
+            <span class="label">Best</span>
+            <strong id="best">0</strong>
+          </div>
+          <div>
+            <span class="label">Mood</span>
+            <strong id="mood">Calm-ish</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-wrap">
+        <div class="game-panel">
+          <div class="hud">
+            <button id="startButton" class="primary-button" type="button">Start round</button>
+            <p id="message" class="message">Use arrow keys, drag, or tap to move.</p>
+          </div>
+
+          <div id="gameArea" class="game-area" aria-label="Game area">
+            <div class="reward-photo" aria-hidden="true">
+              <img
+                src="./assets/family-photo.jpeg"
+                alt=""
+              />
+            </div>
+            <div id="player" class="player" aria-hidden="true">
+              <img class="dog-icon" src="./assets/dog-player.png" alt="" />
+            </div>
+            <div id="countdown" class="countdown hidden">3</div>
+          </div>
+
+          <div class="instructions">
+            <div class="legend good">Catch: bone, heart, toy</div>
+            <div class="legend bad">Avoid: poop, broom, bath</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
