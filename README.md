@@ -1,6 +1,6 @@
 # 🎮 Arita's Puppy Panic
 
-> **Learning case study** · 🎮 Software prototyping · Building with AI tools · Rules and feedback
+> **Learning case study** · Software prototyping · Building with AI tools · Rules and feedback
 >
 > A historical experiment with explanations, examples, and source code.
 
