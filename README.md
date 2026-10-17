@@ -1,39 +1,103 @@
-# Arita's Puppy Panic
+# 🎮 Arita's Puppy Panic
 
-This is a tiny, silly browser game built around one very serious responsibility:
-protecting a small dog from the chaos of everyday life.
+> **Learning case study** · 🎮 Software prototyping · Building with AI tools · Rules and feedback
+>
+> An experiment preserved for teaching. You can learn from the explanation, sample, and code even if the original app no longer runs.
 
-You control the dog and slide left or right across the screen, trying to collect
-the good things in life:
+[📚 Learning hub](https://github.com/bforbesc/Data-AI-with-Forbes) · [🧭 Beginner guide](https://github.com/bforbesc/Data-AI-with-Forbes/blob/main/START_HERE.md) · [🌐 Build and deploy a data app](https://github.com/bforbesc/Data-AI-with-Forbes/tree/main/templates/streamlit-starter)
 
-- `🦴` bones
-- `❤️` hearts
-- `🧸` toys
+## The idea before the tools
 
-At the same time, you need to stay far away from the truly dangerous and deeply
-offensive things:
+**How do we turn an idea into behavior someone can try and question?**
 
-- `💩` poop
-- `🧹` brooms
-- `🛁` baths
+**Idea → explicit rules → playable prototype → observe and revise**
 
-The whole point is to survive the nonsense long enough to earn a proper reward.
-If you reach the target score, the game stops and reveals the hidden photo in
-the background like a little prize for your efforts.
+This is a study of an approach, rather than a recommendation to adopt an old app. First explain what happens in each step; only then look at the library or framework that implements it.
 
-It is meant to be easy to open, easy to understand, and hopefully funny in a
-very specific "this dog has opinions" kind of way.
+| Tool in this project | What it does in the example |
+|---|---|
+| **HTML** | Defines the page structure and controls. |
+| **CSS** | Controls appearance and layout. |
+| **JavaScript** | Applies movement, scoring, and game rules. |
 
-## Run locally
+**A tiny browser game, and a playful experiment in turning an idea into something people can try.**
 
-From the project folder, start a tiny local server:
+Move the dog, catch the good things, avoid the bad things, and unlock a puppy picture when you reach the target. This project is part of [Data & AI with Forbes](https://github.com/bforbesc/Data-AI-with-Forbes), a collection of learning content and experiments with data, software, and AI tools.
 
-```bash
-cd /Users/bernardo/Desktop/CODE/arita-the-game
-python3 -m http.server 4173
+## What it does, and why
+
+This is an experiment with gaming and building with AI tools. It makes software ideas visible: a rule changes a score, an action produces feedback, and a small change can make the game easier or harder. You can learn from playing and explaining those choices without writing code.
+
+The game itself runs in the browser. It does not call an AI model during play and needs no paid API key. The reward image is a newly generated, fictional puppy photo; it contains no personal family photo.
+
+## Start here: no coding
+
+There is no hosted demo linked here. Ask your teacher to start the game using the steps below, or download and run a copy with their help. Once it is open in a browser:
+
+1. Press **Start round** and wait for the countdown.
+2. Move with the **left/right arrow keys**, or **tap and drag** on the game area.
+3. Catch bones (**+3**), hearts (**+4**), and toys (**+5**).
+4. Avoid poop and brooms (**−4** each), and baths (**−5**). Successfully avoiding a bad item adds **1** point. Missing a good item does not subtract points.
+5. Reach **35 points** to reveal the generated puppy picture. Your score cannot go below zero. Your best score is saved in this browser.
+
+## First activity: predict, play, explain
+
+Before playing, calculate the score for this sequence: catch a bone, catch a heart, hit a bath, then avoid a broom. Then play a round and record one moment when the feedback helped you understand a rule.
+
+<details>
+<summary>Check the calculation</summary>
+
+Start at 0: `0 + 3 + 4 − 5 + 1 = 3`. If a penalty would take the score below zero, the game keeps it at zero.
+
+</details>
+
+Now discuss:
+
+- Is the target clear before you start?
+- Do you understand why the score changed?
+- Does the game feel different with a keyboard and with touch or drag controls?
+- What one rule would you change, and what do you predict would happen?
+
+## Optional: change just one number
+
+With a teacher's help, open [game.js](game.js) in a text editor and find:
+
+```js
+const winScore = 35;
 ```
 
-Then open [http://127.0.0.1:4173](http://127.0.0.1:4173) in your browser.
+Change **only `35` to `20`**, save the file, refresh the browser, and start another round. The displayed target should now be 20. Predict whether rounds will be shorter, then try it. Put the number back to 35 when you finish. You have changed a software rule without needing to understand the whole program.
 
-Press `Start round`, move with the arrow keys or drag on the game area, and
-begin your career in high-pressure bulldog management.
+For a paper-only version, invent five catches or dodges, calculate the score after each one, and explain whether the target would have been reached.
+
+## Run locally: for teachers and curious students
+
+1. On GitHub, choose **Code → Download ZIP** and extract the folder.
+2. With Python installed, open a terminal in that extracted folder and run:
+
+```bash
+python3 -m http.server 4173 --bind 127.0.0.1
+```
+
+On Windows, use `py -m http.server 4173 --bind 127.0.0.1` if `python3` is unavailable. Open [http://127.0.0.1:4173](http://127.0.0.1:4173) in your browser. Keep the terminal open while playing; press **Ctrl+C** there to stop the server. You do not need Node.js or npm to play.
+
+## What is in the folder?
+
+| File | Role |
+|---|---|
+| [index.html](index.html) | The page's structure: buttons, labels, and game area |
+| [styles.css](styles.css) | Colors, layout, and appearance |
+| [game.js](game.js) | Movement, falling objects, collisions, scoring, and rewards |
+| [assets/](assets/) | Images used by the game |
+
+A **collision** means the game decides two objects touch. A **game loop** repeatedly reads input, moves objects, checks collisions, and updates the screen.
+
+## For teachers
+
+Allow 10–15 minutes. Begin with the scoring question and finish with one proposed rule change. The aim is to describe and test behavior, not to memorize JavaScript. It is also a chance to discuss how AI tools can help build a prototype while a human still needs to check that its rules work.
+
+## License and images
+
+Source code and documentation use the [ISC License](LICENSE), matching the existing package metadata. That code license does **not** grant rights to the images in `assets/`; see [the asset notes](assets/README.md). Use your own appropriately licensed images when making a public derivative.
+
+[Questions and suggestions](https://github.com/bforbesc/arita-the-game/issues) are welcome.
