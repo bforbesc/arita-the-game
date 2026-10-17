@@ -2,7 +2,7 @@
 
 > **Learning case study** · 🎮 Software prototyping · Building with AI tools · Rules and feedback
 >
-> An experiment preserved for teaching. You can learn from the explanation, sample, and code even if the original app no longer runs.
+> A historical experiment with explanations, examples, and source code.
 
 [📚 Learning hub](https://github.com/bforbesc/Data-AI-with-Forbes) · [🧭 Beginner guide](https://github.com/bforbesc/Data-AI-with-Forbes/blob/main/START_HERE.md) · [🌐 Build and deploy a data app](https://github.com/bforbesc/Data-AI-with-Forbes/tree/main/templates/streamlit-starter)
 
@@ -11,8 +11,6 @@
 **How do we turn an idea into behavior someone can try and question?**
 
 **Idea → explicit rules → playable prototype → observe and revise**
-
-This is a study of an approach, rather than a recommendation to adopt an old app. First explain what happens in each step; only then look at the library or framework that implements it.
 
 | Tool in this project | What it does in the example |
 |---|---|
@@ -32,7 +30,7 @@ The game itself runs in the browser. It does not call an AI model during play an
 
 ## Start here: no coding
 
-There is no hosted demo linked here. Ask your teacher to start the game using the steps below, or download and run a copy with their help. Once it is open in a browser:
+Download and run a copy using the local setup below. Once it is open in a browser:
 
 1. Press **Start round** and wait for the countdown.
 2. Move with the **left/right arrow keys**, or **tap and drag** on the game area.
@@ -60,7 +58,7 @@ Now discuss:
 
 ## Optional: change just one number
 
-With a teacher's help, open [game.js](game.js) in a text editor and find:
+Open [game.js](game.js) in a text editor and find:
 
 ```js
 const winScore = 35;
@@ -70,7 +68,7 @@ Change **only `35` to `20`**, save the file, refresh the browser, and start anot
 
 For a paper-only version, invent five catches or dodges, calculate the score after each one, and explain whether the target would have been reached.
 
-## Run locally: for teachers and curious students
+## Run locally
 
 1. On GitHub, choose **Code → Download ZIP** and extract the folder.
 2. With Python installed, open a terminal in that extracted folder and run:
@@ -91,10 +89,6 @@ On Windows, use `py -m http.server 4173 --bind 127.0.0.1` if `python3` is unavai
 | [assets/](assets/) | Images used by the game |
 
 A **collision** means the game decides two objects touch. A **game loop** repeatedly reads input, moves objects, checks collisions, and updates the screen.
-
-## For teachers
-
-Allow 10–15 minutes. Begin with the scoring question and finish with one proposed rule change. The aim is to describe and test behavior, not to memorize JavaScript. It is also a chance to discuss how AI tools can help build a prototype while a human still needs to check that its rules work.
 
 ## License and images
 
